@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="range-input.css">
+
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2cb8a8af11.js" crossorigin="anonymous"></script>
+    <title>Discover New Tastes</title>
+</head>
+<body>
+    <!-- Nav -->
+    <div class="nav">
+        <h3>Moy & Co. <i class="burger fa-sharp fa-solid fa-bars"></i></h3>
+
+        <i class="socials fa-brands fa-square-facebook"></i>
+        <i class="socials fa-brands fa-instagram"></i>
+        <i class="socials fa-brands fa-square-twitter"></i>
+
+    </div>
+
+    <div class="mobile-nav">
+        <h3>Moy & Co. </h3>
+        <i class="mobile-burger fa-sharp fa-solid fa-bars" id="mobile-burger"></i>
+    </div>
+
+    <!-- Map -->
+    <div class="left">
+        <h1>DISCOVER <br>NEW TASTES</h1>
+        <div id="map"></div>
+    </div>
+    
+    <!-- <h1 class="mobile-discover">DISCOVER <br>NEW TASTES</h1> -->
+    <!-- Left AKA Right -->
+    <div class="right">
+        <div class="title-form-div">
+            
+            <p class="right-text findaplace">Find a place <br>near you.</p>
+            <form id="form">
+                <h2 id="radius" class="right-text">Radius</h2>
+                <div class="slider-div">
+                    <h2 class="left-radius-val slider-value right-text">1 km</h2>
+                    <input type="range" min="1000" max="15000" value="1000" class="slider styled-slider slider-progress" id="radius-slider" step="1000" name="radiusName">
+                    <h2 class="right-radius-val slider-value right-text">15 km</h2>
+                </div>
+                
+                <br>
+                <br>
+                <h2 class="halal-label right-text">Halal</h2>
+                <div class="halal-slider-div">
+                    <h2 class="halal-no">No</h2>
+                    <input type="range" min="0" max="1" value="0" class="slider styled-slider slider-progress halal-checkbox-slider" id="halal-checkbox-slider" step="1" name="halalSlider">
+                    <!-- <input type="checkbox" id="halal-checkbox" value="halal" name="halalName"> -->
+                    <h2 class="halal-yes">Yes</h2>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-org right-text">Let's Eat!</button>
+                <h4 id="error"></h4>
+            </form>
+        </div>
+        
+        
+        <!-- Results div -->
+        <div id="changes-div">
+                <div id="loading"><span class="dot-1 finding">Finding Awesome Food...</span><span class="dot-2 finding">.</span><span class="dot-3 finding">.</span></div>
+                <div class="prev-result">
+                    <h2 class="changes-text" id="locationResult"></h2>
+                    <h3 class="changes-text" id="rating"></h3>
+                    <h3 class="changes-text" id="address"></h3>
+                    <br>
+                    <img src="" alt="" id="locationImage" height="300px" width="300px">
+                </div>
+        </div>
+    </div>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnUdsn2VCnZNmJg7YMQqMi3OAg1IgX4R8&callback=initMap">
+</script>
+    <script src="slider.js"></script>
+    <script src="range-input.js"></script>
+</body>
+</html>
+
